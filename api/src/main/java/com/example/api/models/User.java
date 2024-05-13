@@ -2,14 +2,13 @@ package com.example.api.models;
 
 import com.example.api.responses.OptionContract;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User implements OptionContract {
-    @id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int schoolYear;

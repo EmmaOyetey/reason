@@ -1,7 +1,6 @@
 package com.example.api.models;
 
-package com.example.greeting.models;
-
+import com.example.api.responses.OptionalContract;
 
 import javax.persistence.*;
 

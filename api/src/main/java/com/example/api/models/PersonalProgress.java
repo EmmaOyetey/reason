@@ -1,8 +1,5 @@
 package com.example.api.models;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -14,15 +11,15 @@ public class PersonalProgress {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private boolean completed;
-    private boolean correct;
+    private boolean isCompleted = false;
+    private boolean isCorrect = false;
     private LocalDate dateCompleted = LocalDate.now;
 
     @Column(name = "question_id")
     private int questionId;
 
     @OneToOne
-    @JoinColumn(name = "question_id", insertable = false, update = false)
+    @JoinColumn(name = "question_id", insertable = false, updatable = false)
     private Question question;
 
     @Column(name = "user_id")
@@ -41,19 +38,19 @@ public class PersonalProgress {
     }
 
     public boolean isCompleted() {
-        return completed;
+        return isCompleted;
     }
 
     public void setCompleted(boolean completed) {
-        this.completed = completed;
+        this.isCompleted = completed;
     }
 
     public boolean isCorrect() {
-        return correct;
+        return isCorrect;
     }
 
     public void setCorrect(boolean correct) {
-        this.correct = correct;
+        this.isCorrect = correct;
     }
 
     public LocalDate getDateCompleted() {
@@ -100,8 +97,8 @@ public class PersonalProgress {
     public String toString() {
         return "PersonalProgress{" +
                 "id=" + id +
-                ", completed=" + completed +
-                ", correct=" + correct +
+                ", isCompleted=" + isCompleted +
+                ", isCorrect=" + isCorrect +
                 ", dateCompleted=" + dateCompleted +
                 ", questionId=" + questionId +
                 ", question=" + question +
