@@ -1,0 +1,32 @@
+--DROP DATABASE IF EXISTS greetings;
+--
+--CREATE DATABASE greetings;
+--
+--USE reason;
+--
+--CREATE TABLE `countries` (
+--  `id` bigint NOT NULL AUTO_INCREMENT,
+--  `flag_url` varchar(255) DEFAULT NULL,
+--  `name` varchar(255) DEFAULT NULL,
+--  PRIMARY KEY (`id`)
+--);
+--
+--CREATE TABLE `users` (
+--  `id` bigint NOT NULL AUTO_INCREMENT,
+--  `age` int NOT NULL,
+--  `first_name` varchar(255) DEFAULT NULL,
+--  `last_name` varchar(255) DEFAULT NULL,
+--  PRIMARY KEY (`id`)
+--);
+--
+--CREATE TABLE `greetings` (
+--  `id` bigint NOT NULL AUTO_INCREMENT,
+--  `country_id` bigint DEFAULT NULL,
+--  `date_created` date DEFAULT NULL,
+--  `greeting` varchar(255) DEFAULT NULL,
+--  `nationality` varchar(255) DEFAULT NULL,
+--  `user_id` bigint DEFAULT NULL,
+--  PRIMARY KEY (`id`),
+--  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+--  FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
+--);

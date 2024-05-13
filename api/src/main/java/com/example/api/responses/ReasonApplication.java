@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ReasonApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ReasonApplication.class, args);
 	}
 
