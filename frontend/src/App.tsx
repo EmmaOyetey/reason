@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.scss";
+//import ViewQuestions from "./containers/ViewQuestionsViewQuestions";
+//import Home from "./containers/Home/Home";
+import Nav from "./components/Nav/Nav";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//import CreateQuestion from "./containers/CreateQuestion/CreateQuestion";
+//import EditQuestion from "./containers/EditQuestion/EditQuestion";
+//import { useEffect, useState } from "react";
+import Home from "./containers/Home/Home";
+//import OptionType from "./types/OptionType";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  // const [users, setUsers] = useState<OptionType[]>([]);
+  // const [questions, setQuestions] = useState<OptionType[]>([]);
+
+  // const getUsers = async () => {
+  //   const response = await fetch("http://localhost:8080/reason/users");
+  //   const reasonData = await response.json();
+  //   setUsers(reasonData);
+  // };
+
+  //
+  // const getQuestions = async () => {
+  //   const response = await fetch("http://localhost:8080/reason/questions");
+  //   const reasonData = await response.json();
+  //   setQuestions(reasonData);
+  // };
+
+  // useEffect(() => {
+  //   getQuestions();
+  //   getUsers();
+  // }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Nav navActionIndex={0} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/greetings" element={<ViewQuestions questions={questions} />} />
+        <Route path="/greeting/create" element={<CreateQuestion users={users} question={question} />} />
+        <Route path="/greeting/edit/:id" element={<EditGreeting users={users} countries={countries} />} /> */}
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

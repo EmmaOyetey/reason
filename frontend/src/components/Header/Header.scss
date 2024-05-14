@@ -1,0 +1,139 @@
+@use "../../styles/reset";
+@use "../../styles/variables" as *;
+@use "../../styles/typography";
+
+.header {
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+  background-color: $secondary-color;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image-div {
+    width: 2.2rem;
+    height: auto;
+    margin-right: 1rem;
+
+    &--image {
+      border-radius: 50%;
+      background-color: $white-color;
+    }
+  }
+
+  &__title-wrapper {
+    flex-grow: 1;
+  }
+
+  &__subtitle-date-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    & h6 {
+      margin-top: 0.5rem;
+      font-family: $font-family-modern-header;
+    }
+  }
+
+  &__title-div--title {
+    color: $primary-color;
+    margin-bottom: unset;
+    font-family: $font-family-header-title;
+  }
+
+  &__title-div--subtitle {
+    margin-top: unset;
+    margin-bottom: unset;
+    font-family: $font-family-modern-header;
+  }
+
+  &__title-div--date {
+    margin-top: unset;
+    font-family: $font-family-modern-header;
+  }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  .header {
+    padding: 1.5rem;
+    padding-bottom: 0;
+
+    &__image-div {
+      width: 2.6rem;
+    }
+    &__title-div {
+      &--title {
+        font-size: 1.2rem;
+      }
+      &--subtitle {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  .header {
+    padding: 1.5rem;
+    padding-bottom: 0;
+
+    &__image-div {
+      width: 2rem;
+    }
+    &__title-div {
+      margin-top: -1.5rem;
+      &--title {
+        font-size: 0.9rem;
+        margin-bottom: 0.9rem;
+      }
+      &--subtitle {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  .header {
+    padding: 2rem;
+    padding-bottom: 0;
+
+    &__image-div {
+      width: 3rem;
+    }
+    &__title-div {
+      &--title {
+        font-size: 1.1rem;
+      }
+      &--subtitle {
+        font-size: 3rem;
+      }
+    }
+    padding-left: 2.5rem;
+  }
+}
+
+@media screen and (min-width: $extra-large-desktop-breakpoint) {
+  .header {
+    padding: rem;
+    padding-bottom: 0;
+    &__image-div {
+      width: 5rem;
+    }
+    &__title-div {
+      &--title {
+        font-size: 1.8rem;
+      }
+      &--subtitle {
+        font-size: 5rem;
+      }
+    }
+    padding-left: 5.5rem;
+  }
+}

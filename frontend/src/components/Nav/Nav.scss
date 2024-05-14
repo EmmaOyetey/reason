@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+
+.bottom-navigation {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+
+  &__item .MuiSvgIcon-root {
+    color: darkcyan;
+  }
+
+  .Mui-selected .MuiSvgIcon-root {
+    color: black;
+  }
+  .Mui-selected {
+    color: black;
+  }
+
+  .css-imwso6-MuiBottomNavigationAction-label {
+    font-family: $font-family-modern-content;
+  }
+}

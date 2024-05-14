@@ -38,6 +38,10 @@ public class ReasonService {
         schoolsRepository.save(school);
     }
 
+    public void addQuestion(Question question){
+        questionRepository.save()
+    }
+
     //read
 
     public User getUserByID(long id) {
