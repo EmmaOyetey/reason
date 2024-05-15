@@ -23,7 +23,7 @@ public class ReasonController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 
-    @PostMapping("/User/register")
+    @PostMapping("/user/register")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User newUser = reasonService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);

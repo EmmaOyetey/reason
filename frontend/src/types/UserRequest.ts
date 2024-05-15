@@ -3,7 +3,7 @@ type UserRequest = {
     firstName: string;
     userName: string;
     schoolId: number;
-    schoolYear: number;
+    schoolYear: string;
   };
   
   export default UserRequest;
