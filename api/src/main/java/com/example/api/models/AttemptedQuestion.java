@@ -14,17 +14,17 @@ public class AttemptedQuestion {
     private LocalDate dateCompleted = LocalDate.now();
 
     @Column(name = "question_id")
-    private int questionId;
+    private long questionId;
 
     @Column(name = "user_id")
     private long userId;
 
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "question_id", insertable = false, updatable = false)
     private Question question;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
 
@@ -53,7 +53,7 @@ public class AttemptedQuestion {
     }
 
     public int getQuestionId() {
-        return questionId;
+        return (int) questionId;
     }
 
     public void setQuestionId(int questionId) {

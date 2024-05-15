@@ -13,7 +13,7 @@ public class Question  {
     private String questionUrl;
     private String additionalInstructions;
     private String answer;
-    private String answerURL;
+    private String answerUrl;
     private String explanation;
     private LocalDate dateAdded = LocalDate.now();
 
@@ -58,11 +58,11 @@ public class Question  {
     }
 
     public String getAnswerURL() {
-        return answerURL;
+        return answerUrl;
     }
 
     public void setAnswerURL(String answerURL) {
-        this.answerURL = answerURL;
+        this.answerUrl = answerURL;
     }
 
     public String getExplanation() {
@@ -89,7 +89,7 @@ public class Question  {
                 ", questionUrl='" + questionUrl + '\'' +
                 ", additionalInstructions='" + additionalInstructions + '\'' +
                 ", answer='" + answer + '\'' +
-                ", answerURL='" + answerURL + '\'' +
+                ", answerURL='" + answerUrl + '\'' +
                 ", explanation='" + explanation + '\'' +
                 ", dateAdded=" + dateAdded +
                 '}';

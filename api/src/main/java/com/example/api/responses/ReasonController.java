@@ -1,6 +1,7 @@
 package com.example.api.responses;
 
 //import com.example.api.responses.Option;
+
 import com.example.api.models.Question;
 import com.example.api.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +41,24 @@ public class ReasonController {
 
 
 
+
+
 }
+
+
+//@PostMapping("/User/register")
+//public ResponseEntity<?> createUser(@Valid @RequestBody User user, BindingResult result) {
+//    // Check for validation errors
+//    if (result.hasErrors()) {
+//        // If validation errors exist, return a response with error details
+//        List<String> errors = result.getFieldErrors()
+//                .stream()
+//                .map(DefaultMessageSourceResolvable::getDefaultMessage)
+//                .collect(Collectors.toList());
+//        return ResponseEntity.badRequest().body(errors);
+//    }
+//
+//    // If input is valid, proceed with user creation
+//    User newUser = reasonService.createUser(user);
+//    return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
+//}
