@@ -1,21 +1,20 @@
 package com.example.api.models;
 
-import com.example.api.responses.OptionContract;
-
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
-public class User implements OptionContract {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int schoolYear;
     private String school;
     private String firstName;
-    private String lastName;
     private String userName;
+    private LocalDate dateRegistered = LocalDate.now();
 
     public long getId() {
         return id;
@@ -49,20 +48,20 @@ public class User implements OptionContract {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getUserName() {
         return userName;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public LocalDate getDateRegistered() {
+        return dateRegistered;
+    }
+
+    public void setDateRegistered(LocalDate dateRegistered) {
+        this.dateRegistered = dateRegistered;
     }
 
     @Override
@@ -72,8 +71,8 @@ public class User implements OptionContract {
                 ", schoolYear=" + schoolYear +
                 ", school='" + school + '\'' +
                 ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
+                ", dateRegistered=" + dateRegistered +
                 '}';
     }
 }

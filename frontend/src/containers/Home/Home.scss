@@ -8,21 +8,36 @@
   width: 100%;
   margin-bottom: 70px;
 
-  &__questions-button {
+  &__daily-tasks-button {
     margin-top: 1rem;
   }
   &__header {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
     line-height: $line-height-header;
-    padding: 0 2rem 0 2.2rem;
-    color: $background-color;
+    color: $primary-color;
+    margin-bottom: unset;
+    font-size: 2rem;;
   }
-  &__paragraph {
+
+  &__intro{
+    display:flex;
+    justify-content: center;
     padding: 0 2rem 0 2.2rem;
     color: $slate-grey-color;
     line-height: $line-height-paragraph;
   }
+
+  &__paragraph {
+    display:flex;
+    justify-content: center;
+    padding: 0 2rem 0 2.2rem;
+    color: $slate-grey-color;
+    line-height: $line-height-paragraph;
+  }
+  
   &__quote {
     line-height: $line-height-subtext;
     padding: 0 3.5rem 0 6rem;
@@ -32,6 +47,10 @@
     border-left: 0.2rem solid $grey-color;
     padding-left: 10px;
     color: $background-color;
+  }
+
+  &__questions-button {
+    margin-top: 2rem;
   }
 }
 

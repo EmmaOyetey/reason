@@ -1,6 +1,6 @@
 package com.example.api.responses;
 
-import com.example.api.responses.Option;
+//import com.example.api.responses.Option;
 import com.example.api.models.Question;
 import com.example.api.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +22,21 @@ public class ReasonController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 
-    @PostMapping("/User")
+    @PostMapping("/User/register")
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User newUser = reasonService.addUser(user);
+        User newUser = reasonService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
 
-    @GetMappping("/question/ids")
+    @GetMapping("/question/ids")
     public ResponseEntity<List<Long>> getQuestionIds() {
             return ResponseEntity.status(HttpStatus.OK).body(reasonService.getQuestionIds());
-        }
+    }
 
-        @GetMapping("/question/{id}/")
-        public ResponseEntity<Question> getQuestionById(@PathVariable long id) {
+    @GetMapping("/question/{id}/")
+    public ResponseEntity<Question> getQuestionById(@PathVariable long id) {
             return ResponseEntity.status(HttpStatus.OK).body(reasonService.getQuestionById(id));
-        }
+    }
 
 
 

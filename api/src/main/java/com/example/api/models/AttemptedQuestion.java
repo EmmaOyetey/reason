@@ -4,28 +4,27 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "personalProgress")
-public class PersonalProgress {
+@Table(name = "attemptedQuestions")
+public class AttemptedQuestion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    private boolean isCompleted = false;
     private boolean isCorrect = false;
-    private LocalDate dateCompleted = LocalDate.now;
+    private LocalDate dateCompleted = LocalDate.now();
 
     @Column(name = "question_id")
     private int questionId;
 
-    @OneToOne
-    @JoinColumn(name = "question_id", insertable = false, updatable = false)
-    private Question question;
-
     @Column(name = "user_id")
     private long userId;
 
-    @OneToOne
+
+    @OneToMany
+    @JoinColumn(name = "question_id", insertable = false, updatable = false)
+    private Question question;
+
+    @OneToMany
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
 
@@ -35,14 +34,6 @@ public class PersonalProgress {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public boolean isCompleted() {
-        return isCompleted;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.isCompleted = completed;
     }
 
     public boolean isCorrect() {
@@ -95,9 +86,8 @@ public class PersonalProgress {
 
     @Override
     public String toString() {
-        return "PersonalProgress{" +
+        return "AttemptedQuestion{" +
                 "id=" + id +
-                ", isCompleted=" + isCompleted +
                 ", isCorrect=" + isCorrect +
                 ", dateCompleted=" + dateCompleted +
                 ", questionId=" + questionId +

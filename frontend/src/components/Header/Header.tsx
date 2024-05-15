@@ -14,12 +14,12 @@ const Header = ({ subtitle, date }: HeaderProps) => {
         
         <div className="header__title-wrapper">
           <h4 className="header__title-div--title">
-            REASON
+            REASON : {subtitle}
           </h4>
           <div className="header__subtitle-date-wrapper">
-            <h1 className="header__title-div--subtitle">
-              {subtitle}
-            </h1>
+            <h2 className="header__title-div--subtitle">
+              
+            </h2>
             <h6 className="header__title-div--date">
               {date}
             </h6>

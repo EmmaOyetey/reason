@@ -21,14 +21,13 @@ const Home = () => {
     <div>
       <Header subtitle="Home" date={date} />
       <section className="home">
-        <div className="home__questions-button">
-          <Link to="/questions">
-            <Button label="VIEW QUESTIONS" variant="primary"></Button>
-          </Link>
-        </div>
+        
         <h2 className="home__header">
-        Discover Reason, your ultimate platform for mastering logic reasoning..
+        REASON
         </h2>
+        <h3 className="home__intro">
+          Your ultimate platform for mastering logic reasoning
+        </h3>
         <p className="home__paragraph">
           Dive into a vibrant community and a diverse array of challenging questions suited to all skill levels. 
         </p>
@@ -46,6 +45,11 @@ const Home = () => {
            Get ready to unlockaccess to (will be!) an extensive library of challenges. 
            elevate your reasoning skills and tackle the toughest puzzles Reason has to offer!
         </p>
+        <div className="home__questions-button">
+          <Link to="/questions">
+            <Button label="VIEW QUESTIONS" variant="primary"></Button>
+          </Link>
+        </div>
       </section>
       <Navigation navActionIndex={0} />
     </div>

@@ -1,21 +1,19 @@
 package com.example.api.responses;
 
-import com.example.api.models.School;
+import com.example.api.models.AttemptedQuestion;
 import com.example.api.models.Question;
+import com.example.api.models.School;
 import com.example.api.models.User;
-import com.example.api.models.PersonalProgress;
-import com.example.api.repositories.PersonalProgressRepository;
+import com.example.api.repositories.AttemptedQuestionRepository;
 import com.example.api.repositories.QuestionRepository;
 import com.example.api.repositories.SchoolRepository;
 import com.example.api.repositories.UserRepository;
-import com.example.api.responses.OptionContract;
+//import com.example.api.responses.Option;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 @Service
 public class ReasonService {
@@ -24,47 +22,58 @@ public class ReasonService {
     @Autowired
     QuestionRepository questionRepository;
     @Autowired
-    PersonalProgressRepository personalProgressRepository;
-    @Autowired
     SchoolRepository schoolsRepository;
+    @Autowired
+    AttemptedQuestionRepository attemptedQuestionRepository;
 
     //create
 
-    public void addUser(User user) {
-            userRepository.save(user);
+    public User createUser(User user) {
+        return userRepository.save(user);
     }
 
-    public void addSchool(School school) {
-        schoolsRepository.save(school);
+    public Question addQuestion(Question question) {
+        return questionRepository.save(question);
     }
 
-    public void addQuestion(Question question){
-        questionRepository.save()
+
+    public School addSchool(School school) {
+        return schoolsRepository.save(school);
+    }
+
+    public AttemptedQuestion createAttemptedQuestion(AttemptedQuestion attemptedQuestion) {
+        Question question = questionRepository.findById(attemptedQuestion.getQuestionId()).orElseThrow(() -> new NotFoundException("Question not found"));
+        User user = userRepository.findById(attemptedQuestion.getUserId()).orElseThrow(() -> new NotFoundException("User not found"));
+
+        AttemptedQuestion newAttemptedQuestion = attemptedQuestionRepository.save(attemptedQuestion);
+
+        newAttemptedQuestion.setUser(user);
+        newAttemptedQuestion.setQuestion(question);
+
+        return newAttemptedQuestion;
     }
 
     //read
-
-    public User getUserByID(long id) {
-        return userRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("User Not Found"));
+    public User getUserById(long id) {
+        return userRepository.findById(id).orElseThrow(() -> new NotFoundException("User Not Found"));
     }
 
-    public List<Option> getSchools() {
-        return getFormOptions(schoolsRepository.findAll());
+    public Question getQuestionById (long id) {
+        return questionRepository.findById((int) id).orElseThrow(() -> new NotFoundException("Question Not Found"));
     }
 
-    public PersonalProgess getPersonalProgressByUserID(long id) {
-        return personalProgressRepository.findByUserId(userId)
-                .orElseThrow(() -> new NotFoundException("Personal Progress Not Found"));
+    public Question getRandomQuestion() {
+        return questionRepository.getRandomQuestion();
     }
 
-    // HELPER
-    private List<Option> getFormOptions(List<? extends OptionContract> options) {
-        return options
-                .stream()
-                .distinct()
-                .map(option -> new Option(option.getId(), option.getName()))
-                .collect(Collectors.toList());
+
+    public List<Long> getQuestionIds() {
+        return questionRepository.getDistinctIds();
     }
 
 }
+
+
+
+
+

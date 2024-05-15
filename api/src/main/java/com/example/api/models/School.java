@@ -1,17 +1,18 @@
 package com.example.api.models;
 
-import com.example.api.responses.OptionalContract;
+
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "school")
-public class School implements OptionContract {
+public class School  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String county;
+    private String type;
 
     public long getId() {
         return id;
@@ -37,12 +38,21 @@ public class School implements OptionContract {
         this.county = county;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "School{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", county='" + county + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
