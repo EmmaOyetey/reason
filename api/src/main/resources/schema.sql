@@ -6,21 +6,22 @@ USE reason;
 
 CREATE TABLE `users` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `school_id` bigint DEFAULT NULL,
+  -->`school_id` bigint DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
+  `school_year` varchar(255) DEFAULT NULL,
   `date_registered` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-  FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
+  -->FOREIGN KEY (`school_id`) REFERENCES `school` (`id`),
 );
 
 CREATE TABLE `question` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `difficulty_rating` varchar(255) NOT NULL,
   `question_url` varchar(255) DEFAULT NULL,
-  `additional_instructions` varchar(255) DEFAULT NULL,
-  `answer`varchar(255) DEFAULT NULL,
   `answer_url` varchar(255) DEFAULT NULL,
+  `answer`varchar(255) DEFAULT NULL,
+  `additional_instructions` varchar(255) DEFAULT NULL,
   `explanation`varchar(255) DEFAULT NULL,
   `date_added` date DEFAULT NULL,
    PRIMARY KEY (`id`)
