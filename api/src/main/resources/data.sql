@@ -1,29 +1,29 @@
 use reason;
 
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Philip", "abri123", "11","2024-04-02");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Mo","iko123","12", "11","2024-04-02");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Lavern","vern123", "10","2024-04-02");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Bryan", "brave123", "12","2024-04-02");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Dania", "dan123", "10","2024-04-02");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Kisha", "cord123", "12","2023-08-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Lani", "shame123","2023-12-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Jimmie", "phew123", "9","2023-08-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Nathanial", "gill123", "10","2023-08-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Chaya", "chay123", "11","2023-08-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Troy", "boy123", "10","2023-08-21";
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Tana","ese123", "11","2023-08-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Zachery","pop123", "11","2023-12-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Dario","acre123", "10", "2023-12-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Candie", "bass123", "12", "2023-12-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Sherita", "sord123", "10" , "2023-12-21");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Holli", "zeit123", "11", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Alyson", "foll123", "9", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Margrett", "ghee123", "9", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Ching","get123", "12", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Roman","allin123", "11", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Hui","puz123", "10", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Truman","rite123", "11", "2024-03-17");
-INSERT INTO users(`first_name`, `user_name`, `school_year, date_registered`) VALUES ("Margarite","bug123", "11", "2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Philip", "abri123", "11", 2, "2024-04-02");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Mo","iko123","12", "11", 3, "2024-04-02");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Lavern","vern123", "10",2, "2024-04-02");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Bryan", "brave123", "12",7, "2024-04-02");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Dania", "dan123", "10",7, "2024-04-02");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Kisha", "cord123", "12",1,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Lani", "shame123","11",9,"2023-12-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Jimmie", "phew123", "9",5,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Nathanial", "gill123", "10",5,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Chaya", "chay123", "11",8,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Troy", "boy123", "10",9,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Tana","ese123", "11",8,"2023-08-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Zachery","pop123", "11",9,"2023-12-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Dario","acre123", "10",2, "2023-12-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Candie", "bass123", "12", 3,"2023-12-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Sherita", "sord123", "10", 4, "2023-12-21");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Holli", "zeit123", "11", 4,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Alyson", "foll123", "9", 3,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Margrett", "ghee123", "9", 10,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Ching","get123", "12", 9,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Roman","allin123", "11", 8,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Hui","puz123", "10",7, "2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Truman","rite123", "11", 6,"2024-03-17");
+INSERT INTO users(`first_name`, `user_name`, `school_year`, `school_id`, `date_registered`) VALUES ("Margarite","bug123", "11", 5,"2024-03-17");
 
 INSERT INTO questions(`difficulty_rating`, `question_url`,`answer_url`, `answer`, `additional_instructions`, `explanation`, `date_added`) VALUES ("5","reason/api/src/resources/questions/q1.png",NULL, "e",NULL,"Within each row the figure turns 45 degrees clockwise with every step to the right.","2024-03-17" );
 INSERT INTO questions(`difficulty_rating`, `question_url`,`answer_url`, `answer`, `additional_instructions`, `explanation`, `date_added`) VALUES ("5","reason/api/src/resources/questions/q2.png",NULL,"c", NULL,"Within each row, the arrow rotates 135 degrees clockwise with each step to the right.", "2024-03-17");
@@ -66,3 +66,32 @@ INSERT INTO questions(`difficulty_rating`, `question_url`,`answer_url`, `answer`
 INSERT INTO questions(`difficulty_rating`, `question_url`,`answer_url`, `answer`, `additional_instructions`, `explanation`, `date_added`) VALUES ("6","reason/api/src/resources/questions/q39.png",NULL,"c", "a is top left, b top right, c bottom left, d bottom right","Every row is a calculation. The number of black circles outside a figure represent a positive number, the number of black circles within a figure represent a negative number. The third column is the sum of the first and second column. Every row has the same three figures. A square is followed by a triangle, a triangle is followed by a circle and a circle is followed by a square." , "2024-03-17");
 INSERT INTO questions(`difficulty_rating`, `question_url`,`answer_url`, `answer`, `additional_instructions`, `explanation`, `date_added`) VALUES ("6", "reason/api/src/resources/questions/q40.png",NULL,"b","a is top left, b top right, c bottom left, d bottom right","Every column the circle moves to the right and changes from white to black and vice versa. Every row the circle moves down. Every column the square moves to the left and changes from black to white and vice versa. Every row the square moves up. Every column the horizontal line moves up.", "2024-03-17");
 
+INSERT INTO school(`name`, `county`, `type`) VALUES ("The Wren Academy","London","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("The Elizabeth Garrett School","London","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Chorlton High School","Manchester","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Co-op Academy Manchester","Manchester","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Kings Academy","Somerset","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Hanham Woods Academy","Bristol","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Oasis Academy John Williams","Bristol","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("The Blue School","Somerset","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("City of London Academy Highbury Grove","London","Secondary" )
+INSERT INTO school(`name`, `county`, `type`) VALUES ("Manchester Enterprise Academy","Manchester","Secondary" )
+
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-10",NULL,2,4);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-11",NULL,5,4);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-12",NULL,23,4);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-06-10",NULL,17,1);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-05",NULL,15,7);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-04",NULL,15,10);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (FALSE, "2024-05-03",NULL,34,5);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-01",NULL,1,8);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-02",NULL,4,8);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-17",NULL,13,9);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-04-10",NULL,17,6);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (FALSE, "2024-04-10",NULL,17,4);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-04-10",NULL,13,1);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (FALSE, "2024-04-01",NULL,32,17);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-05-05",NULL,38,15);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-06-05",NULL,29,1);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (FALSE, "2024-07-02",NULL,29,6);
+INSERT INTO attemptedQuestions(`is_correct`,`date_completed`,`feedback`,`question_id`,`user_id`) VALUES (TRUE, "2024-08-04",NULL,5,7);
