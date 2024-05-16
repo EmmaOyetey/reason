@@ -1,9 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import "./Form.scss";
-import UserRequest from "../../types/UserRequest";
+import UserRequest from "../../types/User/UserRequest";
 import OptionType from "../../types/OptionType";
 import Select from "../../components/Select/select";
-
 
 type FormProps = {
   defaultFormState: UserRequest;
@@ -12,13 +11,18 @@ type FormProps = {
   schools: OptionType[];
 };
 
-const Form = ({ defaultFormState, handleSubmit, formTitle, schools }: FormProps) => {
+const Form = ({
+  defaultFormState,
+  handleSubmit,
+  formTitle,
+  schools,
+}: FormProps) => {
   const [user, setUser] = useState<UserRequest>(defaultFormState);
 
   const handleValidation = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (Object.values(user).some(value => !value)) {
+    if (Object.values(user).some((value) => !value)) {
       alert("Missing content, unable to proceed");
       return;
     }
@@ -26,8 +30,10 @@ const Form = ({ defaultFormState, handleSubmit, formTitle, schools }: FormProps)
     handleSubmit(user);
   };
 
-  const handleInput = (event: FormEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>, key: string) =>
-    setUser({ ...user, [key]: event.currentTarget.value });
+  const handleInput = (
+    event: FormEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
+    key: string
+  ) => setUser({ ...user, [key]: event.currentTarget.value });
 
   return (
     <div className="form-container">
@@ -37,7 +43,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle, schools }: FormProps)
           labelText={"Select School : "}
           label={"schoolId"}
           options={schools}
-          onChange={event => handleInput(event, "schoolId")}
+          onChange={(event) => handleInput(event, "schoolId")}
           defaultOption={"---"}
           defaultValue={user.schoolId.toString()}
         />
@@ -48,7 +54,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle, schools }: FormProps)
           type="text"
           placeholder="First Name"
           value={user.firstName}
-          onInput={event => handleInput(event, "firstName")}
+          onInput={(event) => handleInput(event, "firstName")}
         />
         <label htmlFor="user name">User Name : </label>
         <input
@@ -57,7 +63,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle, schools }: FormProps)
           type="text"
           placeholder="User Name"
           value={user.userName}
-          onInput={event => handleInput(event, "userName")}
+          onInput={(event) => handleInput(event, "userName")}
         />
         <button type="submit" className="form-container__button">
           Submit

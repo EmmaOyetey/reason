@@ -1,62 +1,62 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import "./ViewQuestion.scss";
-import QuestionList from "../../components/GreetingList/GreetingList";
-import Select from "../../components/Select/Select";
-import Spinner from "../../components/Spinner/Spinner";
+import QuestionList from "../../components/QuestionList/QuestionList";
+import Select from "../../components/Select/select";
+// import Spinner from "../../components/Spinner/Spinner";
 import OptionType from "../../types/OptionType";
-import GreetingResponse from "../../types/GreetingResponse";
+import QuestionResponse from "../../types/Question/QuestionResponse";
 
-type ViewGreetingsProps = {
-  countries: OptionType[];
+type ViewQuestionsProps = {
+  difficultyRating: OptionType[];
 };
 
-const DEFAULT_COUNTRY_SELECT = "All Countries";
+const DEFAULT_QUESTION_SELECT = "All questions";
 
-const ViewGreetings = ({ countries }: ViewGreetingsProps) => {
-  const [greetings, setGreetings] = useState<GreetingResponse[]>([]);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
+const ViewQuestions = ({ difficultyRating }: ViewQuestionsProps) => {
+  const [questions, setQuestions] = useState<QuestionResponse[]>([]);
+  const [selectedDifficultyRating, setDifficultyRating] = useState<string>("");
 
-  const getGreetings = async (originCountry: string, countriesArr: OptionType[]) => {
-    let url = "http://localhost:8080/greetings";
+  const getQuestions = async (difficultyRating: string, difficultyRatingArr: OptionType[]) => {
+    let url = "http://localhost:8080/questions";
 
-    if (originCountry && !originCountry.includes(DEFAULT_COUNTRY_SELECT)) {
-      const countryParam = countriesArr.find(country => country.id.toString() === originCountry)?.name;
-      url += `?countryName=${countryParam}`;
+    if (difficultyRating && !difficultyRating.includes(DEFAULT_QUESTION_SELECT)) {
+      const difficultyRatingParam = difficultyRatingArr.find(question => question.difficultyRating.toString() === difficultyRating)?.name;
+      url += `?difficultyRating=${difficultyRatingParam}`;
     }
 
     const response = await fetch(url);
-    const greetingData = await response.json();
-    setGreetings(greetingData);
+    const questionsData = await response.json();
+    setQuestions(questionsData);
   };
 
   useEffect(() => {
-    getGreetings(selectedCountry, countries);
-  }, [selectedCountry, countries]);
+    getQuestions(selectedDifficultyRating, difficultyRating);
+  }, [selectedDifficultyRating, difficultyRating]);
 
-  const handleSelectCountry = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedCountry(event.currentTarget.value);
+  const handleSelectDifficultyRating = (event: ChangeEvent<HTMLSelectElement>) => {
+    setDifficultyRating(event.currentTarget.value);
   };
 
-  const isLoading = !(greetings.length > 0) && !(countries.length > 0);
+ // const isLoading = !(questions.length > 0) && !(questions.length > 0);
 
-  if (isLoading) return <Spinner />;
+ // if (isLoading) return <Spinner />;
 
   return (
-    <section className="view-greetings">
-      <h2 className="view-greetings__title">All The Greetings In The World...</h2>
-      <form className="view-greetings__form">
+    <section className="view-questions">
+      <h2 className="view-questions__title">All Questions...</h2>
+      <form className="view-questions__form">
         <Select
-          defaultOption={DEFAULT_COUNTRY_SELECT}
-          defaultValue={selectedCountry}
-          options={countries}
-          onChange={handleSelectCountry}
-          label="countries"
-          labelText="Select a Country : "
+          defaultOption={DEFAULT_QUESTION_SELECT}
+          defaultValue={selectedDifficultyRating}
+          options={difficultyRating}
+          onChange={handleSelectDifficultyRating}
+          label="questions"
+          labelText="Select a Question : "
         />
       </form>
-      <GreetingList greetings={greetings} />
+      <QuestionList questions={questions} />
     </section>
   );
 };
 
-export default ViewGreetings;
+export default ViewQuestions;

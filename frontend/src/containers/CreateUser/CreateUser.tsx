@@ -1,6 +1,6 @@
 import "./CreateGreeting.scss";
 import Form from "../../components/Form/Form";
-import UserRequest from "../../types/UserRequest";
+import UserRequest from "../../types/User/UserRequest";
 import OptionType from "../../types/OptionType";
 import { useNavigate } from "react-router-dom";
 
@@ -30,10 +30,18 @@ const CreateUser = ({ schools }: CreateUserProps) => {
     }
   };
 
-  const defaultFormState = { id: -1, schoolId: -1, firstName: "", userName: "", schoolYear: "" };
+  const defaultFormState = {
+    id: -1,
+    schoolId: -1,
+    firstName: "",
+    userName: "",
+    schoolYear: "",
+  };
   return (
     <section className="create-user">
-      <h2 className="create-user__title">Register to keep track of your progress</h2>
+      <h2 className="create-user__title">
+        Register to keep track of your progress
+      </h2>
       <Form
         handleSubmit={handleSubmit}
         defaultFormState={defaultFormState}

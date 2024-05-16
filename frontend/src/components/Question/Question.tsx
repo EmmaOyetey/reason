@@ -1,23 +1,27 @@
-import QuestionResponse from "../../types/QuestionReponse";
+import QuestionResponse from "../../types/Question/QuestionResponse";
 import "./Question.scss";
 
-type QuestionProp = {
+type QuestionProps = {
   question: QuestionResponse;
 };
 
-const Question= ({ question }: QuestionProp) => {
-  const {
-    question : {questionUrl, difficultyRating} = {guestionUrl: "No", difficultyRating: "Question"}
-  } = question;
+const Question= ({question} : QuestionProps) => {
+
+  const{ id, questionUrl, additionalInstructions } = question;
 
   return (
-    <div className={`Question ${questionUrl ? "question--overlay" : ""}`} style={{ backgroundImage: `url("${questionUrl}")` }}>
-      <h3 className="greeting__title">{greetingText}</h3>
-      <p className="greeting__text">Nationality: {nationality}</p>
-      <p className="greeting__text">Usually spoken in: {name}</p>
-      <p className="greeting__text">Added by: {`${firstName} ${lastName}`}</p>
-    </div>
+
+        <div className ="question">
+            <div className = "question__content">
+                <div className ="question__image-container">
+                    <img className = "question__image"
+                    src={questionUrl} 
+                    alt={'question ${id}'} />
+                </div>
+                <p className = "question__additional-instructions">{additionalInstructions}</p>
+            </div>
+        </div>
   );
 };
 
-export default Greeting;
+export default Question;

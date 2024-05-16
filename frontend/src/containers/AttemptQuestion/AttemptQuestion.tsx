@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Form from "../../components/Form/Form";
-import AttemptQuestion from "../../components/AttemptQuestion/AttemptQuestion";
+import Question from "../../components/Question/Question";
+import "./AttemptQuestion.scss";
 //import Spinner from "../../components/Spinner/Spinner";
 import "./AttemptGreeting.scss";
 import AttemptQuestionRequest from "../../types/AttemptQuestion/AttemptQuestionRequest";
@@ -21,7 +22,7 @@ const getFormAttemptQuestion = (attemptQuestion: AttemptQuestionResponse) => {
     countryId: attemptQuestion.questionId,
   };
 };
-const AddAttempt = ({ users, question }: AttemptQuestionProps) => {
+const AddAttempt = ({ question }: AttemptQuestionProps) => {
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,8 +32,8 @@ const AddAttempt = ({ users, question }: AttemptQuestionProps) => {
   const getQuestionById = async (id: number) => {
     const url = `http://localhost:8080/question/${id}`;
     const response = await fetch(url);
-    const greetingData = await response.json();
-    setQuestion(QuestionData);
+    const questionData = await response.json();
+    setQuestion(questionData);
   };
 
   useEffect(() => {
@@ -43,19 +44,19 @@ const AddAttempt = ({ users, question }: AttemptQuestionProps) => {
     }
   }, [id, location]);
 
-  const handleUpdateGreeting = async (updatedGreeting: GreetingRequest) => {
-    const result = await fetch(`http://localhost:8080/greeting/${id}`, {
+  const handleQuestionAttempt = async (questionAttempt: AttemptQuestionRequest) => {
+    const result = await fetch(`http://localhost:8080/question/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedGreeting),
+      body: JSON.stringify(questionAttempt),
     });
 
     if (result.ok) {
-      alert("Greeting updated");
-      const updated = await result.json();
-      setGreeting(updated);
+      alert("Question Attempted");
+      const attempt = await result.json();
+      setAttempt(attempt);
     } else {
       const message = await result.text();
       alert(message);
@@ -81,18 +82,18 @@ const AddAttempt = ({ users, question }: AttemptQuestionProps) => {
 
   const handleShowForm = () => setShowForm(!showForm);
 
-  if (!greeting) return <Spinner />;
+ // if (!greeting) return <Spinner />;
 
-  const formGreeting: GreetingRequest | null = greeting ? getFormGreeting(greeting) : null;
+  const formQuestionAttempt: GreetingRequest | null = greeting ? getFormGreeting(greeting) : null;
 
   return (
-    <section className="edit-greeting">
-      <h2 className="edit-greeting__title">Edit Greeting</h2>
-      <div className="edit-greeting__content">
-        <Greeting greeting={greeting} />
-        <div className="edit-greeting__buttons">
+    <section className="attempt-question">
+      <h2 className="attempt-question__title">Attempt Question</h2>
+      <div className="attempt-question__content">
+        <Attempt attempt={attempt} />
+        <div className="attempt-question__button">
           <button
-            className={showForm ? "edit-greeting__button" : "edit-greeting__button edit-greeting__button--secondary"}
+            className="attempt-question__button"
             onClick={handleShowForm}
           >
             Update
@@ -115,4 +116,4 @@ const AddAttempt = ({ users, question }: AttemptQuestionProps) => {
   );
 };
 
-export default EditGreeting;
+export default AttemptQuestion;
