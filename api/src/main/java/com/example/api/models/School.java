@@ -2,7 +2,7 @@ package com.example.api.models;
 
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "school")

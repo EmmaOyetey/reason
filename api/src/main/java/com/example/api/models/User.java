@@ -1,7 +1,8 @@
 package com.example.api.models;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity

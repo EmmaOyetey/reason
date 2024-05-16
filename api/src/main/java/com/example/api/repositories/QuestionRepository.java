@@ -5,14 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Table;
 import java.util.List;
 
-@Table(name = "questions")
+
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
     // READ
-    List<Question> getAllByOrderByDateCreatedDesc();
+   // List<Question> getAllByOrderByDateCreatedDesc();
 
     List<Question> getAllByDifficultyRating(String difficultyRating);
 
@@ -33,5 +32,15 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
     //For generating a random set of questions (where n is the desired number of questions):
     @Query(value = "SELECT * FROM questions ORDER BY RAND() LIMIT ?1", nativeQuery = true)
     List<Question> getRandomQuestions(int n);
+    
 
+
+    @Query(value= "SELECT * FROM questions", nativeQuery = true)
+    List<Question> getQuestions();
+
+    @Query(value= "SELECT * FROM questions", nativeQuery = true)
+    List<Question> getAllQuestions();
+
+    @Query(value = "SELECT * FROM questions WHERE difficulty_rating = ?1 ORDER BY RAND()", nativeQuery = true)
+    List<Question> getQuestionsByDifficultyRating();
 }

@@ -1,0 +1,30 @@
+.view-questions__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0; // Adjust padding if needed
+  margin-top: 2rem;
+
+  .view-questions__label {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem; // Adjust margin if needed
+  }
+
+  .view-questions__select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: 0.2rem solid grey; // Adjust border properties
+    border-radius: 1rem;
+    color: black;
+
+    &:focus {
+      border-color: whitesmoke;
+      outline: none;
+    }
+  }
+}
+  

@@ -1,20 +1,21 @@
 import { ChangeEventHandler } from "react";
-import OptionType from "../../types/OptionType";
+//import OptionType from "../../types/OptionType";
 
 type SelectProps = {
-  options: OptionType[];
+  options: any[];
   onChange: ChangeEventHandler<HTMLSelectElement>;
   labelText: string;
   label: string;
   defaultOption: string;
   defaultValue?: string;
+  classname: string;
 };
 
-const Select = ({ options, onChange, labelText, label, defaultOption, defaultValue = "" }: SelectProps) => {
+const Select = ({ options, onChange, labelText, label, defaultOption, defaultValue, classname = "" }: SelectProps) => {
   return (
     <>
       <label htmlFor={label}>{labelText}</label>
-      <select name={label} id={label} onChange={onChange} value={defaultValue}>
+      <select name={label} id={label} onChange={onChange} value={defaultValue} className={classname} >
         {<option value={defaultOption}>{defaultOption}</option>}
         {options.map(({ name, id }) => (
           <option key={label + id} value={id}>

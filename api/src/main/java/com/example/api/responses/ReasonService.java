@@ -22,7 +22,7 @@ public class ReasonService {
     @Autowired
     QuestionRepository questionRepository;
     @Autowired
-    SchoolRepository schoolsRepository;
+    SchoolRepository schoolRepository;
     @Autowired
     AttemptedQuestionRepository attemptedQuestionRepository;
 
@@ -38,7 +38,7 @@ public class ReasonService {
 
 
     public School addSchool(School school) {
-        return schoolsRepository.save(school);
+        return schoolRepository.save(school);
     }
 
     public AttemptedQuestion createAttemptedQuestion(AttemptedQuestion attemptedQuestion) {
@@ -71,7 +71,29 @@ public class ReasonService {
         return questionRepository.getDistinctIds();
     }
 
+    public List<User> getUsers() { return userRepository.getUsers();}
+
+    public List<Question> getQuestions() {return questionRepository.getQuestions();
+    }
+
+//    public List<Question> getQuestionByDifficultyLevel(String difficultyLevel, int limit) {
+//        return questionRepository.getRandomQuestionByDifficulty(10);
+//
+//    }
+
+    public List<Question> getAllQuestions() {
+        return questionRepository.getAllQuestions();
+    }
+
+    public List<School> getSchools() {
+        return schoolRepository.getAllSchools();
+    }
+
+    public List<Question> getQuestionsByDifficultyRating(String difficultyRating) {
+        return questionRepository.getQuestionsByDifficultyRating();
+    }
 }
+
 
 
 

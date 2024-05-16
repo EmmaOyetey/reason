@@ -1,14 +1,15 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import "./Form.scss";
 import UserRequest from "../../types/User/UserRequest";
-import OptionType from "../../types/OptionType";
+//import OptionType from "../../types/OptionType";
 import Select from "../../components/Select/select";
+import SchoolResponse from "../../types/School/SchoolResponse";
 
 type FormProps = {
   defaultFormState: UserRequest;
   formTitle: string;
   handleSubmit: (user: UserRequest) => void;
-  schools: OptionType[];
+  schools: SchoolResponse[];
 };
 
 const Form = ({
@@ -40,6 +41,7 @@ const Form = ({
       <h2 className="form-container__title">{formTitle}</h2>
       <form className="form-container__form" onSubmit={handleValidation}>
         <Select
+          classname="form-container__select"
           labelText={"Select School : "}
           label={"schoolId"}
           options={schools}

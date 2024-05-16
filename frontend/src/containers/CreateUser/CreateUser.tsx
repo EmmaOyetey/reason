@@ -1,11 +1,12 @@
-import "./CreateGreeting.scss";
+import "./CreateUser.scss";
 import Form from "../../components/Form/Form";
 import UserRequest from "../../types/User/UserRequest";
-import OptionType from "../../types/OptionType";
+//import OptionType from "../../types/OptionType";
 import { useNavigate } from "react-router-dom";
+import SchoolResponse from "../../types/School/SchoolResponse";
 
 type CreateUserProps = {
-  schools: OptionType[];
+  schools: SchoolResponse [];
 };
 
 const CreateUser = ({ schools }: CreateUserProps) => {
